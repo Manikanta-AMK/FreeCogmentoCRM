@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-06-02T21:05:42 IST" name="Suite" finished-at="2025-06-02T21:05:55 IST" duration-ms="13133">
+    <groups>
+    </groups>
+    <test started-at="2025-06-02T21:05:42 IST" name="HomePageTest" finished-at="2025-06-02T21:05:55 IST" duration-ms="13133">
+      <class name="TestCases.HomPageTest">
+        <test-method is-config="true" signature="extentReportMethod()[pri:0, instance:TestCases.HomPageTest@74ea2410]" started-at="2025-06-02T21:05:42 IST" name="extentReportMethod" finished-at="2025-06-02T21:05:43 IST" duration-ms="301" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- extentReportMethod -->
+        <test-method is-config="true" signature="initialization(java.lang.String,java.lang.reflect.Method)[pri:0, instance:TestCases.HomPageTest@74ea2410]" started-at="2025-06-02T21:05:43 IST" name="initialization" finished-at="2025-06-02T21:05:49 IST" duration-ms="6217" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public void TestCases.HomPageTest.HompageTest() throws java.lang.Throwable]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialization -->
+        <test-method signature="HompageTest()[pri:0, instance:TestCases.HomPageTest@74ea2410]" started-at="2025-06-02T21:05:49 IST" name="HompageTest" finished-at="2025-06-02T21:05:55 IST" duration-ms="5937" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- HompageTest -->
+        <test-method is-config="true" signature="onTestFailure(org.testng.ITestResult)[pri:0, instance:TestCases.HomPageTest@74ea2410]" started-at="2025-06-02T21:05:55 IST" name="onTestFailure" finished-at="2025-06-02T21:05:55 IST" duration-ms="260" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=HompageTest status=SUCCESS method=HomPageTest.HompageTest()[pri:0, instance:TestCases.HomPageTest@74ea2410] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- onTestFailure -->
+        <test-method is-config="true" signature="onFinish(org.testng.ITestContext)[pri:0, instance:TestCases.HomPageTest@74ea2410]" started-at="2025-06-02T21:05:55 IST" name="onFinish" finished-at="2025-06-02T21:05:55 IST" duration-ms="376" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@4d499d65]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- onFinish -->
+      </class> <!-- TestCases.HomPageTest -->
+    </test> <!-- HomePageTest -->
+  </suite> <!-- Suite -->
+</testng-results>
