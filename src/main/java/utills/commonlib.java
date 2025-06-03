@@ -6,6 +6,7 @@ import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 import java.util.Date;
+import java.util.Random;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -128,6 +129,12 @@ public class commonlib {
 		Actions action = new Actions(driver);
 		action.moveToElement(element).click().perform();
 	}*/
+	
+	public void randomMailID()
+	{
+		Random randommail = new Random();
+		randommail.
+	}
 	
 	public void mousehover(WebDriver driver, WebElement element)
 	{
