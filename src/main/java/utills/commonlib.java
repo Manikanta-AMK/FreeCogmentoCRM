@@ -130,11 +130,11 @@ public class commonlib {
 		action.moveToElement(element).click().perform();
 	}*/
 	
-	public void randomMailID()
-	{
-		Random randommail = new Random();
-		randommail.
-	}
+//	public void randomMailID()
+//	{
+//		Random randommail = new Random();
+//		randommail.
+//	}
 	
 	public void mousehover(WebDriver driver, WebElement element)
 	{
