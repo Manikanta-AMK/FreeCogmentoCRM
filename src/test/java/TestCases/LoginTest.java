@@ -18,8 +18,8 @@ public class LoginTest extends baseTest {
 	public void loginTestCase()
 	{
 		loginpageevents.verifyIfPageIsLoaded();
-//		logger.info("waited untill page loaded");
+		log.info("waited untill page fully loaded");
 		loginpageevents.enterCredentials();
-//		logger.info("logged in succesfully");
+		log.info("Loggedin successfully");
 	}
 }
