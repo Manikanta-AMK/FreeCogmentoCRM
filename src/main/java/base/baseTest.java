@@ -3,6 +3,8 @@ package base;
 import java.lang.reflect.Method;
 import java.time.Duration;
 
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -32,6 +34,7 @@ public class baseTest {
 	public ExtentTest logger;
 	public ExtentSparkReporter sparkReporter;
 	public static WebDriver driver;
+	public static Logger log;
 
 	@BeforeTest
 	public void extentReportMethod() {
@@ -53,8 +56,11 @@ public class baseTest {
 		logger = extent.createTest(testmethod.getName());
 		setupDriver(browser);
 		driver.manage().deleteAllCookies();
+		log.info("cookies deleted");
 		driver.manage().window().maximize();
+		log.info("Browser maximized");
 		driver.get(constants.url);
+		log.info("url launched");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 	}
 
@@ -72,27 +78,33 @@ public class baseTest {
 					MarkupHelper.createLabel(result.getThrowable() + " - Testcase failed ", ExtentColor.RED));
 		} else if (result.getStatus() == ITestResult.SKIP) {
 			logger.log(Status.SKIP,
-					MarkupHelper.createLabel(result.getName() + " - Testcase failed ", ExtentColor.BLUE));
+					MarkupHelper.createLabel(result.getName() + " - Testcase skipped ", ExtentColor.BLUE));
 			logger.log(Status.SKIP,
-					MarkupHelper.createLabel(result.getThrowable() + " - Testcase failed ", ExtentColor.BLUE));
+					MarkupHelper.createLabel(result.getThrowable() + " - Testcase skipped ", ExtentColor.BLUE));
 		} else {
 			logger.log(Status.PASS,
-					MarkupHelper.createLabel(result.getName() + " - Testcase failed ", ExtentColor.GREEN));
+					MarkupHelper.createLabel(result.getName() + " - Testcase passed ", ExtentColor.GREEN));
 		}
 		driver.quit();
 	}
 
 	public void setupDriver(String browserName) {
-
+		
+		log = Logger.getLogger("CogmentoCRM");
+		 PropertyConfigurator.configure(constants.log4jPath);
+		 
 		if (browserName.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
+			log.info("Chrome browser opened");
 		} else if (browserName.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
+			log.info("Firefox browser opened");
 		} else if (browserName.equalsIgnoreCase("edge")) {
 			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
+			log.info("Edge browser opened");
 		}
 		
 	}

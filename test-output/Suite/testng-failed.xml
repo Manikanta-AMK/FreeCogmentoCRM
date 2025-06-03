@@ -4,18 +4,18 @@
   <listeners>
     <listener class-name="utills.suiteListener"/>
   </listeners>
-  <test thread-count="5" name="HomePageTest(failed)">
+  <test thread-count="5" name="chromeTestLogin(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="TestCases.HomPageTest">
+      <class name="TestCases.LoginTest">
         <methods>
           <include name="onTestFailure"/>
           <include name="onFinish"/>
           <include name="extentReportMethod"/>
-          <include name="HompageTest"/>
+          <include name="loginTestCase"/>
           <include name="initialization"/>
         </methods>
-      </class> <!-- TestCases.HomPageTest -->
+      </class> <!-- TestCases.LoginTest -->
     </classes>
-  </test> <!-- HomePageTest(failed) -->
+  </test> <!-- chromeTestLogin(failed) -->
 </suite> <!-- Failed suite [Suite] -->
