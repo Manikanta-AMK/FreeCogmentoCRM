@@ -39,6 +39,7 @@ public class NewCompany extends baseTest {
 		companiespageevent.enterIndustry(industry);
 		companiespageevent.enterNumbeOfEmployees(noofemployees);
 		companiespageevent.clickSaveButton();
+		Thread.sleep(10000);
 	}
 
 	@DataProvider(name="newCompaniesDetails")

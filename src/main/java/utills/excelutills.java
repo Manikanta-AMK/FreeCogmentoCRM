@@ -61,4 +61,14 @@ public class excelutills implements constants {
 		
 	}
 	
+	public static String getDataFromRow(String path, String sheet, int row) throws Throwable
+	{
+		 fis = new FileInputStream(excelPath);
+		 wb = WorkbookFactory.create(fis);
+		 sh = wb.getSheet(sheet);
+		 r = sh.getRow(row);
+		String value = c.getStringCellValue().toString();
+		return value;
+	}
+	
 }

@@ -49,6 +49,8 @@ public class HomePageTest extends baseTest {
 		//	commonlib.mousehover(baseTest.driver, homepageevents.homeicon());
 		log.info("Mousehover to the home icon");
 		commonlib.screenShots("homePage");
+		
+		
 
 	}
 
