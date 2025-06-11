@@ -4,10 +4,10 @@
 	<listeners>
 		<listener class-name="utills.suiteListener"></listener>
 	</listeners>
-  <test thread-count="5" name="HomePageTest">
+  <test thread-count="5" name="HomePageTestchrome">
 	  <parameter name="browser" value="chrome"></parameter>
     <classes>
-      <class name="TestCases.HomPageTest"/>
+      <class name="TestCases.HomePageTest"/>
     </classes>
   </test> <!-- HomePageTest -->
 </suite> <!-- Suite -->
