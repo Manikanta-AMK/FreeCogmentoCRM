@@ -40,25 +40,25 @@ public class newCompanyNameDetails2 extends baseTest{
 //		}
 //	}
 	
-	
-	@DataProvider(name = "companyData")
-	public Object[][] getCompanyData() throws Throwable {
-		int rc = excelutils.getrowcount(constants.excelPath, "NewCompanyDetails");
-		Object[][] data = new Object[rc][6];
-		for (int i = 0; i < rc; i++) {
-			for (int j = 0; j < 6; j++) {
-				data[i][j] = excelutils.getDataFromExcel(constants.excelPath, "NewCompanyDetails", i + 1, j);
-			}
-		}
-		return data;
-	}
-
-	@Test(dataProvider = "companyData")
-	public void newCompanyNameDetailsTest(String name, String website, String city, String phoneNumber, String industry, String noofemployees) throws Throwable {
-		newcompany.addNewCompany(name, website, city, phoneNumber, industry, noofemployees);
-		
-		String actualCompanyName = newcompanydetailspageevents.newCompanyDetails(); // Assume this returns name
-		Assert.assertEquals(actualCompanyName, name, "company name is not  matching");
-	}
+//	
+//	@DataProvider(name = "companyData")
+//	public Object[][] getCompanyData() throws Throwable {
+//		int rc = excelutils.getrowcount(constants.excelPath, "NewCompanyDetails");
+//		Object[][] data = new Object[rc][6];
+//		for (int i = 0; i < rc; i++) {
+//			for (int j = 0; j < 6; j++) {
+//				data[i][j] = excelutils.getDataFromExcel(constants.excelPath, "NewCompanyDetails", i + 1, j);
+//			}
+//		}
+//		return data;
+//	}
+//
+//	@Test(dataProvider = "companyData")
+//	public void newCompanyNameDetailsTest(String name, String website, String city, String phoneNumber, String industry, String noofemployees) throws Throwable {
+//		newcompany.addNewCompany(name, website, city, phoneNumber, industry, noofemployees);
+//		
+//		String actualCompanyName = newcompanydetailspageevents.newCompanyDetails(); // Assume this returns name
+//		Assert.assertEquals(actualCompanyName, name, "company name is not  matching");
+//	}
 	
 }

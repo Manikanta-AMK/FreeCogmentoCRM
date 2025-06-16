@@ -4,12 +4,12 @@
   <listeners>
     <listener class-name="utills.suiteListener"/>
   </listeners>
-  <test thread-count="5" name="allTestCases(failed)">
+  <test thread-count="5" name="NewCompanyTest(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
       <class name="TestCases.NewCompany">
         <methods>
-          <include name="addNewCompany"/>
+          <include name="addNewCompany" invocation-numbers="0 0 1 1 2 2 3 3 4 4 5 5 6 6 7 7 8 8 9 9 10 10"/>
           <include name="onTestFailure"/>
           <include name="onFinish"/>
           <include name="extentReportMethod"/>
@@ -17,5 +17,5 @@
         </methods>
       </class> <!-- TestCases.NewCompany -->
     </classes>
-  </test> <!-- allTestCases(failed) -->
+  </test> <!-- NewCompanyTest(failed) -->
 </suite> <!-- Failed suite [Suite] -->
