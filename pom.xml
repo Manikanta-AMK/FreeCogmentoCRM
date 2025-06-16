@@ -92,7 +92,7 @@
 				<version>3.0.0-M5</version>
 				<configuration>
 					<suiteXmlFiles>
-						<suiteXmlFile>allTestCases.xml</suiteXmlFile>
+						<suiteXmlFile>testngXML/allTestcases.xml</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
