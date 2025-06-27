@@ -23,7 +23,7 @@ public class newCompanyNameDetails2 extends baseTest{
 	CompaniesPageEvents companiespageevent = new CompaniesPageEvents();
 	excelutills excelutils = new excelutills();
 	newCompanyDetailsPageEvents newcompanydetailspageevents = new newCompanyDetailsPageEvents();
-	NewCompany newcompany = new NewCompany();
+	NewCompanyTest newcompany = new NewCompanyTest();
 	
 	
 //	@Test

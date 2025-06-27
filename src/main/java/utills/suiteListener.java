@@ -14,11 +14,18 @@ import org.testng.ITestResult;
 import org.testng.Reporter;
 import org.testng.annotations.ITestAnnotation;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+
 import base.baseTest;
 
 
 public class suiteListener implements ITestListener, IAnnotationTransformer{
 
+	public static ExtentTest test;
+	public static ExtentReports extent;
+	
 	public void onTestFailure(ITestResult result) 
 	{
 		String filename = System.getProperty("user.dir")+File.separator+"screenshots"+File.separator+result.getMethod().getMethodName();
@@ -44,5 +51,10 @@ public class suiteListener implements ITestListener, IAnnotationTransformer{
 	public void transform(
 		      ITestAnnotation annotation, Class testClass, Constructor testConstructor, Method testMethod) {
               annotation.setRetryAnalyzer(retryAnalyzer.class);
+	}
+	
+	public void onTestStart(ITestResult result) {
+		test = extent.createTest(result.getName());
+		test.log(Status.INFO, result.getName() + "method started");
 	}
 }

@@ -9,7 +9,7 @@
 		<classes>
 			<!-- <class name="TestCases.LoginTest"/>
 			<class name="TestCases.HomePageTest"/> -->
-			<class name="TestCases.NewCompany"/>
+			<class name="TestCases.NewCompanyTest"/>
 		</classes>
 	</test> <!--
 	addNewCompanyNameDetailsTest -->

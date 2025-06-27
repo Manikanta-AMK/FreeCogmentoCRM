@@ -18,6 +18,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.ITestResult;
 
+import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.google.common.io.Files;
@@ -25,6 +26,8 @@ import com.google.common.io.Files;
 import base.baseTest;
 
 public class commonlib {
+	
+	
 	
 	/*public void backNavigation()
 	{
@@ -39,7 +42,7 @@ public class commonlib {
 	public void pageRefresh()
 	{
 		driver.navigate().refresh();
-	}
+	}*/
 	
 	public static void elementStatus(int checkType, WebElement element, String elementName)
 	{
@@ -48,40 +51,40 @@ public class commonlib {
 		case 1: 
 			try {
 				element.isDisplayed();
-				extentReports3.test.info(MarkupHelper.createLabel(elementName+" is displayed", ExtentColor.ORANGE));
+				suiteListener.test.info(MarkupHelper.createLabel(elementName+" is displayed", ExtentColor.ORANGE));
 				
 			}
 			catch(Exception e)
 			{
-				extentReports3.test.info(MarkupHelper.createLabel(elementName+" is not displayed", ExtentColor.GREY));
+				suiteListener.test.info(MarkupHelper.createLabel(elementName+" is not displayed", ExtentColor.GREY));
 			}
 			break;
 			
 		case 2:
 			try {
 				element.isEnabled();
-				extentReports3.test.info(MarkupHelper.createLabel(elementName+" is enabled", ExtentColor.ORANGE));
+				suiteListener.test.info(MarkupHelper.createLabel(elementName+" is enabled", ExtentColor.ORANGE));
 			}
 			catch(Exception e)
 			{
-				extentReports3.test.info(MarkupHelper.createLabel(elementName+" is not disabled", ExtentColor.PINK));
+				suiteListener.test.info(MarkupHelper.createLabel(elementName+" is not disabled", ExtentColor.PINK));
 			}
 		    break;
 		
 		case 3:
 			try {
 				element.isSelected();
-				extentReports3.test.info(MarkupHelper.createLabel(elementName+" is selected", ExtentColor.ORANGE));
+				suiteListener.test.info(MarkupHelper.createLabel(elementName+" is selected", ExtentColor.ORANGE));
 			}
 		    catch(Exception e)
 			{
-		    	extentReports3.test.info(MarkupHelper.createLabel(elementName+" is not selected", ExtentColor.YELLOW));
+		    	suiteListener.test.info(MarkupHelper.createLabel(elementName+" is not selected", ExtentColor.YELLOW));
 			}
 		    break;
 		}
 	}
 
-	public void pageTitleVerification(String actual, String expected, String pagetitle)
+	/*public void pageTitleVerification(String actual, String expected, String pagetitle)
 	{
 		Assert.assertEquals(actual, expected);
 		
@@ -91,7 +94,7 @@ public class commonlib {
 		}else {
 			Assert.assertEquals(pagetitle+" is not displayed, failed", false);
 		}
-	}
+	}*/
 	
 
 	public void staticDropDownVisibleTxt(WebElement element, String text)
@@ -123,7 +126,7 @@ public class commonlib {
 		Select sel = new Select(element);
 		sel.deselectByIndex(index);
 	}
-	
+	/*
 	public void ActionsClass(WebElement element)
 	{
 		Actions action = new Actions(driver);
