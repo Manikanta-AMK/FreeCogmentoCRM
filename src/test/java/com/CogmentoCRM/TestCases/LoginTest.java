@@ -1,25 +1,23 @@
-package TestCases;
+package com.CogmentoCRM.TestCases;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import base.baseTest;
-import pageElements.HomePageElements;
-import pageElements.LoginPageElements;
-import pageEvents.LoginPageEvents;
-import utills.elementFetch;
+import com.CogmentoCRM.base.baseTest;
+import com.CogmentoCRM.page.LoginPage;
+import com.CogmentoCRM.utills.constants;
 
 public class LoginTest extends baseTest {
-
-	elementFetch ele = new elementFetch();
-	LoginPageEvents loginpageevents = new LoginPageEvents();
-//	HomePageEvents homepageevents = new HomePageEvents();
+	
+	
+	LoginPage lp;
 	
 	@Test
 	public void loginTestCase()
 	{
-		loginpageevents.verifyIfPageIsLoaded();
-		log.info("waited untill page fully loaded");
-		loginpageevents.enterCredentials();
-		log.info("Loggedin successfully");
+		lp = new LoginPage(driver);
+		Assert.assertEquals(lp.loginPageTitleValidation(),"Free CRM","page title is not matching");
+		lp.loginCredentials(constants.username, constants.password);
+		log.info("Logged in successfully");
 	}
 }

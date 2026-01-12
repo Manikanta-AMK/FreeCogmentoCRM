@@ -1,16 +1,16 @@
-package TestCases;
+package com.CogmentoCRM.TestCases;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import base.baseTest;
-import pageEvents.CompaniesPageEvents;
-import pageEvents.HomePageEvents;
-import pageEvents.LoginPageEvents;
-import pageEvents.newCompanyDetailsPageEvents;
-import utills.constants;
-import utills.elementFetch;
-import utills.excelutills;
+import com.CogmentoCRM.base.baseTest;
+import com.CogmentoCRM.pageEvents.CompaniesPageEvents;
+import com.CogmentoCRM.pageEvents.HomePageEvents;
+import com.CogmentoCRM.pageEvents.LoginPageEvents;
+import com.CogmentoCRM.pageEvents.newCompanyDetailsPageEvents;
+import com.CogmentoCRM.utills.constants;
+import com.CogmentoCRM.utills.elementFetch;
+import com.CogmentoCRM.utills.excelutills;
 
 public class newCompanyNameDetailsTest extends baseTest{
 

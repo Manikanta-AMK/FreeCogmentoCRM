@@ -1,4 +1,4 @@
-package base;
+ package com.CogmentoCRM.base;
 
 import java.lang.reflect.Method;
 import java.time.Duration;
@@ -9,14 +9,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
+import com.CogmentoCRM.utills.constants;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
@@ -26,15 +26,14 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import utills.constants;
 
 public class baseTest {
 
-	public ExtentReports extent;
-	public ExtentTest logger;
-	public ExtentSparkReporter sparkReporter;
-	public static WebDriver driver;
-	public static Logger log;
+	protected ExtentReports extent;
+	protected static ExtentTest logger;
+	protected ExtentSparkReporter sparkReporter;
+	protected static WebDriver driver;
+	protected static Logger log;
 
 	@BeforeTest
 	public void extentReportMethod() {
@@ -64,10 +63,13 @@ public class baseTest {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 	}
 
-	@AfterTest
-	public void onFinish(ITestContext context) {
-		extent.flush();
+	@AfterSuite
+	public void tearDownExtentReport() {
+	    if (extent != null) {
+	        extent.flush();
+	    }
 	}
+
 
 	@AfterMethod
 	public void onTestFailure(ITestResult result) {

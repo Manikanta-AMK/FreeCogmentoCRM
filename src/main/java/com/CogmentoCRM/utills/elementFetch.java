@@ -1,11 +1,11 @@
-package utills;
+package com.CogmentoCRM.utills;
 
 import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import base.baseTest;
+import com.CogmentoCRM.base.baseTest;
 
 public class elementFetch {
 

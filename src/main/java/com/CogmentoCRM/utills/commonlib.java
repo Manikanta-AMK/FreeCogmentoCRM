@@ -1,4 +1,4 @@
-package utills;
+package com.CogmentoCRM.utills;
 
 import java.awt.AWTException;
 import java.awt.Robot;
@@ -18,15 +18,13 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.ITestResult;
 
+import com.CogmentoCRM.base.baseTest;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.google.common.io.Files;
 
-import base.baseTest;
-
-public class commonlib {
-	
+public class commonlib extends baseTest{
 	
 	
 	/*public void backNavigation()

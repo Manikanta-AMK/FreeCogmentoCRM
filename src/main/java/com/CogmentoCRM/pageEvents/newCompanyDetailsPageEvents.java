@@ -1,14 +1,14 @@
-package pageEvents;
+package com.CogmentoCRM.pageEvents;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.testng.Assert;
 
-import pageElements.newCompanyDetailspageElements;
-import utills.constants;
-import utills.elementFetch;
-import utills.excelutills;
+import com.CogmentoCRM.page.newCompanyDetailspageElements;
+import com.CogmentoCRM.utills.constants;
+import com.CogmentoCRM.utills.elementFetch;
+import com.CogmentoCRM.utills.excelutills;
 
 public class newCompanyDetailsPageEvents {
 	

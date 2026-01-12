@@ -1,4 +1,4 @@
-package utills;
+package com.CogmentoCRM.utills;
 
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;

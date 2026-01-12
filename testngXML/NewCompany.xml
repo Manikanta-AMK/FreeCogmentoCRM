@@ -2,12 +2,12 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
 	<listeners>
-		<listener class-name="utills.suiteListener"></listener>
+		<listener class-name="com.CogmentoCRM.utills.suiteListener"></listener>
 	</listeners>
   <test thread-count="5" name="NewCompanyTest">
 	<parameter name="browser" value="chrome"></parameter>
     <classes>
-      <class name="TestCases.NewCompanyTest"/>
+      <class name="com.CogmentoCRM.TestCases.NewCompanyTest"/>
     </classes>
   </test> <!-- NewCompanyTest -->
 </suite> <!-- Suite -->

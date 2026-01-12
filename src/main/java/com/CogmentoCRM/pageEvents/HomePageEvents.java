@@ -1,9 +1,9 @@
-package pageEvents;
+package com.CogmentoCRM.pageEvents;
 
 import org.testng.Assert;
 
-import pageElements.HomePageElements;
-import utills.elementFetch;
+import com.CogmentoCRM.page.HomePageElements;
+import com.CogmentoCRM.utills.elementFetch;
 
 public class HomePageEvents {
 	

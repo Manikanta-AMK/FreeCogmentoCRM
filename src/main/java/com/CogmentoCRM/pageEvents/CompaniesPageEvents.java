@@ -1,8 +1,8 @@
-package pageEvents;
+package com.CogmentoCRM.pageEvents;
 
 
-import pageElements.CompaniesPageElements;
-import utills.elementFetch;
+import com.CogmentoCRM.page.CompaniesPageElements;
+import com.CogmentoCRM.utills.elementFetch;
 
 public class CompaniesPageEvents {
 

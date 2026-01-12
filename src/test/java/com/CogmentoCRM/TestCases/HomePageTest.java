@@ -1,52 +1,49 @@
-package TestCases;
+package com.CogmentoCRM.TestCases;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import base.baseTest;
-import pageEvents.HomePageEvents;
-import pageEvents.LoginPageEvents;
-import utills.commonlib;
-import utills.elementFetch;
+import com.CogmentoCRM.base.baseTest;
+import com.CogmentoCRM.page.HomePage;
+import com.CogmentoCRM.page.LoginPage;
+import com.CogmentoCRM.utills.commonlib;
+import com.CogmentoCRM.utills.constants;
 
 public class HomePageTest extends baseTest {
 
-	elementFetch ele = new elementFetch();
-	LoginPageEvents loginpageevents = new LoginPageEvents();
-	HomePageEvents homepageevents = new HomePageEvents();
-	LoginTest logintest = new LoginTest();
+	LoginPage loginpage;
+	HomePage hp;
 
 	@Test
 	public void HomepageTest() throws Throwable {
-		logintest.loginTestCase();
-		Assert.assertEquals(baseTest.driver.getTitle(), "Cogmento CRM", "title is not matching");
-		log.info("page Title is matching");
-		WebElement username = baseTest.driver.findElement(By.xpath("//span[text()='Manikanta A']"));
-		Assert.assertEquals(username.getText(), "Manikanta A", "username is not matched");
+		loginpage = new LoginPage(driver);
+		loginpage.loginCredentials(constants.username, constants.password);
+		hp = new HomePage(driver);
+		Assert.assertEquals(baseTest.driver.getTitle(), "Free CRM", "title is not matching");
+		log.info(driver.getTitle()+" -page Title is matching");
+		Assert.assertEquals(hp.validateAccountHolder(), constants.accountName,"account name is not matching");
 		log.info("Logged into the correct account");
 		commonlib.screenShots("usernameVerification");
-		homepageevents.verifyLogo();
+		hp.verifyLogo();
 		commonlib.screenShots("logoVerification");
 		log.info("Logo is validated");
-		homepageevents.calander();
+		hp.clickOnCalanderLink();
 		commonlib.screenShots("calander");
-		homepageevents.contacts();
+		hp.clickOnContactsLink();
 		commonlib.screenShots("contacts");
-		homepageevents.companies();
+		hp.clickOnCompaniesLink();
 		commonlib.screenShots("companies");
-		homepageevents.deals();
+		hp.clickOnDealsLink();
 		commonlib.screenShots("deals");
-		homepageevents.tasks();
+		hp.clickOnTasksLink();
 		commonlib.screenShots("tasks");
-		homepageevents.cases();
+		hp.clickOnCasesLink();
 		commonlib.screenShots("cases");
-		homepageevents.calls();
+		hp.clickOnCallsLink();
 		commonlib.screenShots("calls");
-		homepageevents.documents();
+		hp.clickOnDocumentsLink();
 		commonlib.screenShots("documents");
-		//	commonlib.mousehover(baseTest.driver, homepageevents.homeicon());
+		//	commonlib.mousehover(baseTest.driver, hp.homeicon());
 		log.info("Mousehover to the home icon");
 		commonlib.screenShots("homePage");
 		

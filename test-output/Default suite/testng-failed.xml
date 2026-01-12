@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestCases.NewCompany">
+      <class name="com.CogmentoCRM.TestCases.LoginTest">
         <methods>
-          <include name="addNewCompany"/>
-          <include name="onTestFailure"/>
-          <include name="onFinish"/>
+          <include name="tearDownExtentReport"/>
+          <include name="loginTestCase"/>
           <include name="extentReportMethod"/>
           <include name="initialization"/>
+          <include name="onTestFailure"/>
         </methods>
-      </class> <!-- TestCases.NewCompany -->
+      </class> <!-- com.CogmentoCRM.TestCases.LoginTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
