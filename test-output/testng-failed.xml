@@ -4,18 +4,18 @@
   <listeners>
     <listener class-name="com.CogmentoCRM.utills.suiteListener"/>
   </listeners>
-  <test thread-count="5" name="HomePageTestchrome(failed)">
+  <test thread-count="5" name="deleteAllCompanies(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="com.CogmentoCRM.TestCases.HomePageTest">
+      <class name="com.CogmentoCRM.TestCases.companies.deleteAllCompanies">
         <methods>
           <include name="tearDownExtentReport"/>
+          <include name="deleteAllCompaniesDetails"/>
           <include name="extentReportMethod"/>
           <include name="initialization"/>
           <include name="onTestFailure"/>
-          <include name="HomepageTest"/>
         </methods>
-      </class> <!-- com.CogmentoCRM.TestCases.HomePageTest -->
+      </class> <!-- com.CogmentoCRM.TestCases.companies.deleteAllCompanies -->
     </classes>
-  </test> <!-- HomePageTestchrome(failed) -->
+  </test> <!-- deleteAllCompanies(failed) -->
 </suite> <!-- Failed suite [Suite] -->

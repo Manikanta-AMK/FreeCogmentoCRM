@@ -5,6 +5,7 @@ import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Date;
 import java.util.Random;
 
@@ -14,7 +15,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.io.FileHandler;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.ITestResult;
 
@@ -124,12 +127,15 @@ public class commonlib extends baseTest{
 		Select sel = new Select(element);
 		sel.deselectByIndex(index);
 	}
-	/*
-	public void ActionsClass(WebElement element)
-	{
-		Actions action = new Actions(driver);
-		action.moveToElement(element).click().perform();
-	}*/
+	
+	public void moveToElementAndClick(WebDriver driver, WebElement element) {
+	    new WebDriverWait(driver, Duration.ofSeconds(10))
+	        .until(ExpectedConditions.elementToBeClickable(element));
+
+	    Actions actions = new Actions(driver);
+	    actions.moveToElement(element).click().build().perform();
+	}
+
 	
 //	public void randomMailID()
 //	{
@@ -137,7 +143,7 @@ public class commonlib extends baseTest{
 //		randommail.
 //	}
 	
-	public void mousehover(WebDriver driver, WebElement element)
+	public void mousehover(WebElement element)
 	{
 		Actions action = new Actions(driver);
 		action.moveToElement(element).perform();
