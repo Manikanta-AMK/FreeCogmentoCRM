@@ -97,6 +97,10 @@ public class commonlib extends baseTest{
 		}
 	}*/
 	
+	public void explicitWait(WebElement element) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		wait.until(ExpectedConditions.visibilityOf(element));
+	}
 
 	public void staticDropDownVisibleTxt(WebElement element, String text)
 	{
@@ -128,13 +132,14 @@ public class commonlib extends baseTest{
 		sel.deselectByIndex(index);
 	}
 	
-	public void moveToElementAndClick(WebDriver driver, WebElement element) {
+	public void moveToElement(WebDriver driver, WebElement element) {
 	    new WebDriverWait(driver, Duration.ofSeconds(10))
 	        .until(ExpectedConditions.elementToBeClickable(element));
 
 	    Actions actions = new Actions(driver);
-	    actions.moveToElement(element).click().build().perform();
+	    actions.moveToElement(element).build().perform();
 	}
+
 
 	
 //	public void randomMailID()

@@ -1,5 +1,6 @@
 package com.CogmentoCRM.TestCases.companies;
 
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -31,25 +32,47 @@ public class deleteAllCompanies extends baseTest {
 		hp.clickOnCompaniesLink();
 		log.info("landed on companies page");
 		cp = new CompaniesPage(driver);
-		while(cp.clickOnrightChevronIcon().isEnabled())
+		
+		while(!cp.getRightChevronIcon().getAttribute("class").contains("disabled"))
 		{
 			log.info("rightChevronIcon is enabled");
 			clb = new commonlib();
-			clb.moveToElementAndClick(driver, cp.clickOnrightChevronIcon());
+			clb.moveToElement(driver, cp.getRightChevronIcon());
 			log.info("mouse moved");
 			if(!cp.selectDeleteCheckBox().isSelected())
 			{
 				log.info("Delete check box is not selected");
 				cp.selectDeleteCheckBox();
 				log.info("Delete check box is selected");
+			}else {
+				log.info("Delete check box is already selected so unselected");
+				cp.selectDeleteCheckBox();
+				cp.selectDeleteCheckBox();
+				log.info("Delete check box is selected");
 			}
+				WebElement next = cp.getRightChevronIcon();
+				next.click();
+				log.info("rightChevronIcon clicked");
+				
+				Thread.sleep(2000);
+				
+				if(cp.getRightChevronIcon().getAttribute("class").contains("disabled"))
+				{
+					cp.selectDeleteCheckBox();
+					cp.selectDeleteCheckBox();
+				}
 			
-			cp.clickOnrightChevronIcon().click();
-			log.info("rightChevronIcon clicked");
 		}
 		cp.clickActionsDropdown();
+		log.info("clicked on Actions Dropddown");
+		Thread.sleep(1000);
 		cp.selectDeleteOptionFromActionsDropdown();
+		log.info("delete option selected");
+		Thread.sleep(1000);
 		cp.clickOnCheckMarkIcon();
+		log.info("clicked on mark icon");
+		cp.clickOnYesButton();
+		log.info("clicked on yes button");
 		
 		
 		

@@ -1,5 +1,7 @@
 package com.CogmentoCRM.page;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -32,7 +34,8 @@ public class CompaniesPage {
 	@FindBy(xpath="//div[@class=\"item\"]//div[@name=\"action\"]") private WebElement actionsDropdown;
 	@FindBy(xpath="//div[@class=\"item\"]//div[@name=\"action\"]//i//following-sibling::div//span[text()='Delete']") private WebElement deleteoption;
 	@FindBy(xpath="//div[@class=\"item\"]//div[@name=\"action\"]//following-sibling::div[@class=\"ui basic icon left attached button\"]") private WebElement checkmarkIcon;
-	@FindBy(xpath="//i[@class=\"right chevron icon\"]") private WebElement rightChevronIcon;
+//	@FindBy(xpath="//i[@class=\"right chevron icon\"]") private WebElement rightChevronIcon;
+	@FindBy(xpath="//div[@class=\"ui right floated pagination menu custom-pagination\"]//a[contains(@class,\"item\")]") private List<WebElement> paginationItems;
 	@FindBy(xpath="//button[text()='Yes']") private WebElement confirmationYesBtn; 
 	
 	public WebElement selectDeleteCheckBox()
@@ -63,14 +66,20 @@ public class CompaniesPage {
 		checkmarkIcon.click();
 	}
 
-	public WebElement clickOnrightChevronIcon()
-	{
-		 return rightChevronIcon;
-	}
+//	public WebElement clickOnrightChevronIcon()
+//	{
+//		 return  rightChevronIcon;
+//	}
 	
-	public void clickOnYesButton()
+	public WebElement clickOnYesButton()
 	{
 		 confirmationYesBtn.click();
+		 return confirmationYesBtn;
 	}
+	
+	public WebElement getRightChevronIcon() {
+	    return paginationItems.get(paginationItems.size() - 1);
+	}
+
 	
 }
